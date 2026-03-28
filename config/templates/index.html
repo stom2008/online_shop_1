@@ -1,0 +1,13 @@
+<h1>Products</h1>
+<div id="products"></div>
+
+<script>
+fetch('http://127.0.0.1:8000/products/')
+.then(res => res.json())
+.then(data => {
+    let div = document.getElementById('products');
+    data.forEach(p => {
+        div.innerHTML += `<p>${p.name} - ${p.price}</p>`;
+    });
+});
+</script>
